@@ -1,14 +1,17 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import mongoose from "mongoose"; 
+
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
+
 import productRoutes from "./routes/productRoutes.js";
 
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173","*"], credentials: true }));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -16,9 +19,13 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+
 app.use("/api/products", productRoutes);
 
 const PORT = process.env.PORT || 5000;
+
+
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
