@@ -1,3 +1,7 @@
+## user credentials 
+    email - test@gmail.com
+    pass - test@123
+
 # inventory management backend - MERN
 
 this is backend service for inventory management in MERN stack.
