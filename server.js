@@ -10,7 +10,7 @@ import productRoutes from "./routes/productRoutes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: ["http://localhost:5173","*","https://inventory-management-dashboard-frontend-mnxh662uu.vercel.app"], credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173","*","https://inventory-management-dashboard-frontend-mnxh662uu.vercel.app","https://inventory-management-dashboard-fron.vercel.app"], credentials: true }));
 
 app.use(express.json());
 
